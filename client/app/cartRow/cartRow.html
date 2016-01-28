@@ -1,0 +1,12 @@
+<template name="cartRow">
+  <tr>
+    <td>
+      <select {{b "options: parent.items, optionsValue: _id, optionsText: name, value: itemId, defaultText: '- items -'"}}></select>
+    </td>
+    <td><label {{b "text: dollar(item.price)"}}></label></td>
+    <td><input {{b "value: discount"}}></td>
+    <td><input {{b "value: quantity"}}></td>
+    <td><a class="ui red label" {{b "if: total && parent.max <= total"}}>Most Expensive</a></td>
+    <td><label {{b "text: dollar(total)"}}></label></td>
+  </tr>
+</template>

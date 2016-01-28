@@ -1,0 +1,32 @@
+<body>
+  {{> cart }}
+</body>
+
+<template name="cart">
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Quantity</th>
+        <th>Most Expensive?</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cartRows}}
+        {{> cartRow }}
+      {{/each}}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">
+          <div class="ui blue button" {{b "click: addRow"}}>Add Row</div>
+        </th>
+        <th>Grand Total:</th>
+        <th {{b "text: dollar(total)"}}></th>
+      </tr>
+    </tfoot>
+  </table>
+</template>
